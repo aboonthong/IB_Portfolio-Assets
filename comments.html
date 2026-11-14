@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comments 3-Phone Scroll</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 8px;
+    }
+
+    .three-phone-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      width: 100%;
+      max-width: 960px;
+    }
+
+    .phone-unit {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+    }
+
+    .screen-viewport {
+      position: absolute;
+      top: 2%;
+      bottom: 2%;
+      left: 3.2%;
+      right: 3.2%;
+      border-radius: 38px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: #000;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .screen-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .screen-viewport img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .phone-bezel {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @media (max-width: 700px) {
+      .three-phone-row {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="three-phone-row">
+    <!-- Phone 1: Draculaura -->
+    <div class="phone-unit">
+      <div class="screen-viewport">
+        <img src="https://github.com/aboonthong/IB_Portfolio-Assets/blob/main/LongScroll_Dracular.jpg?raw=true" alt="Draculaura Comments" />
+      </div>
+      <img class="phone-bezel" src="https://github.com/aboonthong/IB_Portfolio-Assets/blob/main/Iphone17.png?raw=true" alt="" />
+    </div>
+
+    <!-- Phone 2: Frankie -->
+    <div class="phone-unit">
+      <div class="screen-viewport">
+        <img src="https://github.com/aboonthong/IB_Portfolio-Assets/blob/main/LongScroll_Frankie2.png?raw=true" alt="Frankie Comments" />
+      </div>
+      <img class="phone-bezel" src="https://github.com/aboonthong/IB_Portfolio-Assets/blob/main/Iphone17.png?raw=true" alt="" />
+    </div>
+
+    <!-- Phone 3: Moon Spell -->
+    <div class="phone-unit">
+      <div class="screen-viewport">
+        <img src="https://github.com/aboonthong/IB_Portfolio-Assets/blob/main/LongScroll_MoonSpell2.jpg?raw=true" alt="Moon Spell Comments" />
+      </div>
+      <img class="phone-bezel" src="https://github.com/aboonthong/IB_Portfolio-Assets/blob/main/Iphone17.png?raw=true" alt="" />
+    </div>
+  </div>
+</body>
+</html>
